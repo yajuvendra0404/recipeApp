@@ -1,0 +1,6 @@
+
+
+<div *ngIf="id === undefined; then newRecipe; else  editRecipe;"></div>
+
+<ng-template #editRecipe><p>recipes-Edit works!</p></ng-template>
+<ng-template #newRecipe><p>recipes-New works!</p></ng-template>
