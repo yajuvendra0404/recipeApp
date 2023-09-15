@@ -6,6 +6,7 @@ import { RecipesComponent } from './recipes/recipes.component';
 import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 import { AuthComponent } from './auth/auth.component';
 import { AuthGuard } from './auth/auth.guard';
+import { NoAuthGuard } from './auth/no.auth.guard';
 
 const routes: Routes = [
   { path:'', redirectTo:'recipes',pathMatch:'full'},
@@ -18,7 +19,7 @@ const routes: Routes = [
     ]},
   { path:'shopping-list',component:ShoppingListComponent},
   { path:'auth',
-    // canActivate:[AuthGuard],
+    canActivate:[NoAuthGuard],
     component:AuthComponent
   },
   { path:'**',redirectTo:'recipes'}
